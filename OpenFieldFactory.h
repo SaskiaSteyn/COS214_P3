@@ -1,0 +1,10 @@
+#ifndef PRAC_3_OPENFIELDFACTORY_H
+#define PRAC_3_OPENFIELDFACTORY_H
+
+
+class OpenFieldFactory {
+
+};
+
+
+#endif //PRAC_3_OPENFIELDFACTORY_H
