@@ -1,9 +1,12 @@
 #ifndef PRAC_3_FLANKING_H
 #define PRAC_3_FLANKING_H
 
+#include "BattleStrategy.h"
 
-class Flanking {
-
+class Flanking : public BattleStrategy{
+    public:
+        string getType();
+        const string type = "Flanking";
 };
 
 
