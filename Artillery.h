@@ -2,11 +2,15 @@
 #define PRAC_3_ARTILLERY_H
 
 #include "LegionUnit.h"
+#include "UnitComponent.h"
 
 class Artillery : public LegionUnit{
-    public:
-        virtual void move();
-        virtual void attack();
+public:
+    virtual void move() = 0;
+    virtual void attack() = 0;
+    void reportingForDuty();
+
+    const string type = "Artillery";
 };
 
 

@@ -17,7 +17,7 @@ class LegionUnit {
         void setStrategy(BattleStrategy * battleStrategy);
 
 
-    private:
+    protected:
         BattleStrategy * strategy;
         string legionName;
 };
