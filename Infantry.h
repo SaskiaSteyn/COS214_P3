@@ -4,6 +4,8 @@
 #include "LegionUnit.h"
 #include "UnitComponent.h"
 
+#include <vector>
+
 #include <iostream>
 using namespace std;
 
@@ -16,6 +18,12 @@ class Infantry : public LegionUnit, public UnitComponent{
         void reportingForDuty();
 
         const string type = "Infantry";
+
+        bool add(UnitComponent *component);
+        bool remove(UnitComponent *component);
+
+    protected:
+        vector<UnitComponent*> unitComponent;
 };
 
 
