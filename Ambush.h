@@ -5,6 +5,7 @@
 
 class Ambush : public BattleStrategy{
     public:
+        void engage();
         string getType();
         const string type = "Ambush";
 };

@@ -9,6 +9,7 @@ using namespace std;
 
 class LegionUnit {
     public:
+        LegionUnit();
         virtual void move() = 0;
         virtual void attack() = 0;
         virtual void reportingForDuty() = 0;

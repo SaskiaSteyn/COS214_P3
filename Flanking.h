@@ -5,6 +5,7 @@
 
 class Flanking : public BattleStrategy{
     public:
+        void engage();
         string getType();
         const string type = "Flanking";
 };

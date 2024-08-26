@@ -5,7 +5,14 @@
 #include "UnitComponent.h"
 
 class Cavalry : public LegionUnit {
+    private:
+        int health;
+        int damage;
+        int defence;
+        int amount;
+        int ms;
     public:
+        Cavalry();
         virtual void move() = 0;
         virtual void attack() = 0;
         void reportingForDuty();

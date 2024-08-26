@@ -1,5 +1,9 @@
 #include "LegionUnit.h"
 
+LegionUnit::LegionUnit() {
+
+}
+
 BattleStrategy *LegionUnit::getStrategy() {
     return this->strategy;
 }

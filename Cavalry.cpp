@@ -1,5 +1,13 @@
 #include "Cavalry.h"
 
+Cavalry::Cavalry(): LegionUnit() {
+    this->health = 250;
+    this->damage = 84;
+    this->defence = 10;
+    this->amount = 0;
+    this->ms = 0;
+}
+
 void Cavalry::reportingForDuty() {
     this->strategy->getType();
     if(this->strategy->getType() == "Flanking"){

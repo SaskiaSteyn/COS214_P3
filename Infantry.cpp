@@ -1,5 +1,13 @@
 #include "Infantry.h"
 
+Infantry::Infantry(): LegionUnit() {
+    this->health = 200;
+    this->damage = 50;
+    this->defence = 5;
+    this->amount = 0;
+    this->ms = 0;
+}
+
 void Infantry::reportingForDuty() {
     this->strategy->getType();
     if(this->strategy->getType() == "Ambush"){

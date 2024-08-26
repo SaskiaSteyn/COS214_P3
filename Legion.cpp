@@ -1,5 +1,9 @@
 #include "Legion.h"
 
+Legion::Legion() {
+
+}
+
 void Legion::move() {
     cout << this->getUnitName() << " legion is moving." << endl;
 }

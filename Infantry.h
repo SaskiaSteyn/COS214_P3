@@ -8,7 +8,14 @@
 using namespace std;
 
 class Infantry : public LegionUnit, public UnitComponent{
+    private:
+     int health;
+     int damage;
+     int defence;
+     int amount;
+     int ms;
     public:
+        Infantry();
         virtual void move() = 0;
         virtual void attack() = 0;
         void reportingForDuty();

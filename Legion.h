@@ -7,6 +7,7 @@
 
 class Legion : public UnitComponent{
     public:
+        Legion();
         void move();
         void attack();
         bool add(UnitComponent * component);
