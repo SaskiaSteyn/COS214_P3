@@ -4,6 +4,7 @@
 #include "UnitComponent.h"
 #include <vector>
 
+using namespace std;
 
 class Legion : public UnitComponent{
     public:

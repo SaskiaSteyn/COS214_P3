@@ -13,13 +13,5 @@ void I_Woodland::attack() {
 }
 
 LegionUnit *I_Woodland::clone() {
-    return NULL;
-}
-
-bool I_Woodland::add(UnitComponent *component) {
-    return false;
-}
-
-bool I_Woodland::remove(UnitComponent *component) {
-    return false;
+    return new I_Woodland(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
 }

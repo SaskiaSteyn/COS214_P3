@@ -16,11 +16,3 @@ void A_Woodland::attack() {
 LegionUnit *A_Woodland::clone() {
     return new A_Woodland(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
 }
-
-bool A_Woodland::add(UnitComponent *component) {
-    return false;
-}
-
-bool A_Woodland::remove(UnitComponent *component) {
-    return false;
-}

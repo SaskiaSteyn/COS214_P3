@@ -8,10 +8,7 @@ class A_Riverbank : public Artillery {
         A_Riverbank(int health, int damage, int defence, int amount, int ms);
         virtual void move();
         virtual void attack();
-        LegionUnit * clone();
-
-        virtual bool add(UnitComponent *component);
-        virtual bool remove(UnitComponent *component);
+        virtual LegionUnit * clone();
 };
 
 
