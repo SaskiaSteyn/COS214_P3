@@ -15,11 +15,10 @@ class LegionUnit {
         int amount;
         int ms;
     public:
-        LegionUnit(int health, int damage, int defence, int amount, int ms);
+        LegionUnit(int health, int damage, int defence, int amount, int ms, string unitName);
         virtual void move() = 0;
         virtual void attack() = 0;
         virtual void reportingForDuty() = 0;
-        virtual LegionUnit * clone() = 0;
 
         BattleStrategy * getStrategy();
         void setStrategy(BattleStrategy * battleStrategy);
@@ -29,6 +28,9 @@ class LegionUnit {
         int getDefence();
         int getAmount();
         int getMS();
+
+        void setLegionName(string name);
+        string getLegionName();
 
 
     protected:

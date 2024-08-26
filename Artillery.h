@@ -7,10 +7,10 @@
 
 class Artillery : public LegionUnit, public UnitComponent{
 public:
-    Artillery(int health, int damage, int defence, int amount, int ms);
+    Artillery(int health, int damage, int defence, int amount, int ms, string unitName);
     virtual void move() = 0;
     virtual void attack() = 0;
-    virtual LegionUnit * clone() = 0;
+    virtual Artillery * clone() = 0;
     void reportingForDuty();
 
     const string type = "Artillery";

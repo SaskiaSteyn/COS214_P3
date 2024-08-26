@@ -4,38 +4,28 @@ WoodlandFactory::WoodlandFactory(Infantry *infantryClone, Cavalry *cavalryClone,
     // Inherited
 }
 
-void WoodlandFactory::setInfantryClone() {
+void WoodlandFactory::setInfantryClone(Infantry * newClone) {
+    this->infantryClone = newClone;
+}
+
+void WoodlandFactory::setCavalryClone(Cavalry * newClone) {
+    this->cavalryClone = newClone;
 
 }
 
-void WoodlandFactory::setCavalryClone() {
+void WoodlandFactory::setArtilleryClone(Artillery * newClone) {
+    this->artilleryClone = newClone;
 
-}
-
-void WoodlandFactory::setArtilleryClone() {
-
-}
-
-Artillery *WoodlandFactory::deployArtillery() {
-    return nullptr;
-}
-
-Infantry *WoodlandFactory::deployInfantry() {
-    return nullptr;
-}
-
-Cavalry *WoodlandFactory::deployCavalry() {
-    return nullptr;
 }
 
 Artillery *WoodlandFactory::createArtillery() {
-    return nullptr;
+    return this->artilleryClone->clone();
 }
 
 Cavalry *WoodlandFactory::createCavalry() {
-    return nullptr;
+    return this->cavalryClone->clone();
 }
 
 Infantry *WoodlandFactory::createInfantry() {
-    return nullptr;
+    return this->infantryClone->clone();
 }
