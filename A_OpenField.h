@@ -5,8 +5,10 @@
 
 class A_OpenField : public Artillery{
     public:
+        A_OpenField(int health, int damage, int defence, int amount, int ms);
         void move();
         void attack();
+        LegionUnit * clone();
 };
 
 

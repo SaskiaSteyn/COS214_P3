@@ -5,8 +5,10 @@
 
 class I_OpenField : public Infantry{
     public:
-        virtual void move();
-        virtual void attack();
+        I_OpenField(int health, int damage, int defence, int amount, int ms);
+        void move();
+        void attack();
+        LegionUnit * clone();
 };
 
 

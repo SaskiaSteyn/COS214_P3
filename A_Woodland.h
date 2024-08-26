@@ -5,8 +5,10 @@
 
 class A_Woodland : public Artillery{
     public:
+        A_Woodland(int health, int damage, int defence, int amount, int ms);
         virtual void move();
         virtual void attack();
+        LegionUnit * clone();
 };
 
 
