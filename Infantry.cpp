@@ -1,11 +1,7 @@
 #include "Infantry.h"
 
-Infantry::Infantry(): LegionUnit() {
-    this->health = 200;
-    this->damage = 50;
-    this->defence = 5;
-    this->amount = 0;
-    this->ms = 0;
+Infantry::Infantry(int health, int damage, int defence, int amount, int ms): LegionUnit(health, damage, defence, amount, ms) {
+    // Inherited
 }
 
 void Infantry::reportingForDuty() {

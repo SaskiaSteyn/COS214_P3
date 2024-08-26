@@ -5,8 +5,10 @@
 
 class C_Riverbank : public Cavalry {
     public:
+        C_Riverbank(int health, int damage, int defence, int amount, int ms);
         virtual void move();
         virtual void attack();
+        LegionUnit * clone();
 };
 
 

@@ -6,12 +6,13 @@
 
 class WoodlandFactory : public LegionFactory{
     public:
-        Infantry * createInfantry();
-        Cavalry * createCavalry();
-        Artillery * createArtillery();
-        void deployArtillery();
-        void deployInfantry();
-        void deployCavalry();
+        WoodlandFactory(Infantry * infantryClone, Cavalry * cavalryClone, Artillery * artilleryClone);
+        void setInfantryClone();
+        void setCavalryClone();
+        void setArtilleryClone();
+        Artillery * deployArtillery();
+        Infantry * deployInfantry();
+        Cavalry * deployCavalry();
 };
 
 

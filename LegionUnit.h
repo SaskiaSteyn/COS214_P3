@@ -8,14 +8,27 @@
 using namespace std;
 
 class LegionUnit {
+    private:
+        int health;
+        int damage;
+        int defence;
+        int amount;
+        int ms;
     public:
-        LegionUnit();
+        LegionUnit(int health, int damage, int defence, int amount, int ms);
         virtual void move() = 0;
         virtual void attack() = 0;
         virtual void reportingForDuty() = 0;
+        virtual LegionUnit * clone() = 0;
 
         BattleStrategy * getStrategy();
         void setStrategy(BattleStrategy * battleStrategy);
+
+        int getHealth();
+        int getDamage();
+        int getDefence();
+        int getAmount();
+        int getMS();
 
 
     protected:

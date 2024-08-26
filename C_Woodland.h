@@ -5,8 +5,10 @@
 
 class C_Woodland : public Cavalry{
     public:
+        C_Woodland(int health, int damage, int defence, int amount, int ms);
         virtual void move();
         virtual void attack();
+        LegionUnit * clone();
 };
 
 

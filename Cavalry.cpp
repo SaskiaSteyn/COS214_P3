@@ -1,11 +1,7 @@
 #include "Cavalry.h"
 
-Cavalry::Cavalry(): LegionUnit() {
-    this->health = 250;
-    this->damage = 84;
-    this->defence = 10;
-    this->amount = 0;
-    this->ms = 0;
+Cavalry::Cavalry(int health, int damage, int defence, int amount, int ms): LegionUnit(health, damage, defence, amount, ms) {
+    // Inherited
 }
 
 void Cavalry::reportingForDuty() {

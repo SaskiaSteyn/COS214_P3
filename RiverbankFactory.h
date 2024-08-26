@@ -5,6 +5,7 @@
 
 class RiverbankFactory : public LegionFactory{
     public:
+        RiverbankFactory(Infantry * infantryClone, Cavalry * cavalryClone, Artillery * artilleryClone);
         Infantry * createInfantry();
         Cavalry * createCavalry();
         Artillery * createArtillery();
