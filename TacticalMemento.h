@@ -8,8 +8,11 @@
 using namespace std;
 
 class TacticalMemento {
+    private:
+        BattleStrategy *strategy;
     public:
         void storeStrategy(BattleStrategy *strategy);
+        BattleStrategy* getStrategy();
 };
 
 

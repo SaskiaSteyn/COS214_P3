@@ -2,6 +2,7 @@
 #define PRAC_3_WARARCHIVES_H
 
 #include <iostream>
+#include <string>
 #include <map>
 
 #include "TacticalMemento.h"
@@ -10,7 +11,7 @@ using namespace std;
 
 class WarArchives {
     private:
-        map<string, TacticalMemento> storage;
+        map<string, TacticalMemento*> storage;
     public:
         void addTacticalMemento(TacticalMemento *memento, string label);
         void removeTacticalMemento(string label);
