@@ -27,3 +27,15 @@ Infantry *WoodlandFactory::deployInfantry() {
 Cavalry *WoodlandFactory::deployCavalry() {
     return nullptr;
 }
+
+Artillery *WoodlandFactory::createArtillery() {
+    return nullptr;
+}
+
+Cavalry *WoodlandFactory::createCavalry() {
+    return nullptr;
+}
+
+Infantry *WoodlandFactory::createInfantry() {
+    return nullptr;
+}

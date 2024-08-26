@@ -9,6 +9,9 @@ class C_OpenField : public Cavalry{
         virtual void move();
         virtual void attack();
         LegionUnit * clone();
+
+        virtual bool add(UnitComponent *component);
+        virtual bool remove(UnitComponent *component);
 };
 
 

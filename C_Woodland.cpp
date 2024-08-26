@@ -15,3 +15,11 @@ void C_Woodland::attack() {
 LegionUnit *C_Woodland::clone() {
     return new C_Woodland(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
 }
+
+bool C_Woodland::add(UnitComponent *component) {
+    return false;
+}
+
+bool C_Woodland::remove(UnitComponent *component) {
+    return false;
+}

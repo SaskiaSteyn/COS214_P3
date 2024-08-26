@@ -16,14 +16,27 @@ Artillery *RiverbankFactory::createArtillery() {
     return nullptr;
 }
 
-void RiverbankFactory::deployArtillery() {
+
+void RiverbankFactory::setInfantryClone() {
 
 }
 
-void RiverbankFactory::deployInfantry() {
+void RiverbankFactory::setCavalryClone() {
 
 }
 
-void RiverbankFactory::deployCavalry() {
+void RiverbankFactory::setArtilleryClone() {
 
+}
+
+Artillery *RiverbankFactory::deployArtillery() {
+    return nullptr;
+}
+
+Infantry *RiverbankFactory::deployInfantry() {
+    return nullptr;
+}
+
+Cavalry *RiverbankFactory::deployCavalry() {
+    return nullptr;
 }
