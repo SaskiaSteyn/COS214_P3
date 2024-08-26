@@ -18,3 +18,20 @@ void Cavalry::reportingForDuty() {
         cout << "Sir, we think the artillery squad would be best for this job, sir!" << endl;
     }
 }
+
+bool Cavalry::add(UnitComponent *component) {
+    this->unitComponent.push_back(component);
+    return true;
+}
+
+bool Cavalry::remove(UnitComponent *component) {
+    auto it = find(this->unitComponent.begin(), this->unitComponent.end(), component);
+
+    if (it != this->unitComponent.end()) {
+        this->unitComponent.erase(it);
+        return true;
+    }
+    else{
+        return false;
+    }
+}

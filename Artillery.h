@@ -3,6 +3,7 @@
 
 #include "LegionUnit.h"
 #include "UnitComponent.h"
+#include <vector>
 
 class Artillery : public LegionUnit, public UnitComponent{
 public:
@@ -13,6 +14,12 @@ public:
     void reportingForDuty();
 
     const string type = "Artillery";
+
+    bool add(UnitComponent *component);
+    bool remove(UnitComponent *component);
+
+    protected:
+        vector<UnitComponent*> unitComponent;
 };
 
 

@@ -11,13 +11,17 @@
 using namespace std;
 
 void testFactories() {
-    I_Woodland * woodlandInfantry = new I_Woodland(100, 100, 100, 100, 100);
-    A_Woodland * woodlandArtillery = new A_Woodland(100, 100 ,100, 100, 100);
-    C_Woodland * woodlandCavalry = new C_Woodland(100, 100, 100, 100, 100);
-    WoodlandFactory * woodFactory = new WoodlandFactory(woodlandInfantry, woodlandCavalry, woodlandArtillery);
+    Infantry * woodlandInfantry = new I_Woodland(100, 100, 100, 100, 100);
+    Artillery * woodlandArtillery = new A_Woodland(100, 100 ,100, 100, 100);
+    Cavalry * woodlandCavalry = new C_Woodland(100, 100, 100, 100, 100);
+    LegionFactory * woodFactory = new WoodlandFactory(woodlandInfantry, woodlandCavalry, woodlandArtillery);
 
+    Artillery * cloneA = woodFactory->createArtillery();
+    Cavalry * cloneC = woodFactory->createCavalry();
+    Infantry * cloneI = woodFactory->createInfantry();
 }
 
 int main() {
+    testFactories();
     return 0;
 };

@@ -18,7 +18,7 @@ bool Legion::add(UnitComponent *component) {
 }
 
 bool Legion::remove(UnitComponent *component) {
-    auto it = std::find(this->unitComponent.begin(), this->unitComponent.end(), component);
+    auto it = find(this->unitComponent.begin(), this->unitComponent.end(), component);
 
     if (it != this->unitComponent.end()) {
         this->unitComponent.erase(it);
