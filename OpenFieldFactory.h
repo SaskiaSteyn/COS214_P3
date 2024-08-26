@@ -5,6 +5,7 @@
 
 class OpenFieldFactory : public LegionFactory{
     public:
+        OpenFieldFactory(Infantry * infantryClone, Cavalry * cavalryClone, Artillery * artilleryClone);
         Infantry * createInfantry();
         Cavalry * createCavalry();
         Artillery * createArtillery();
