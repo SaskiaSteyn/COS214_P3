@@ -9,6 +9,9 @@ class A_Woodland : public Artillery{
         virtual void move();
         virtual void attack();
         LegionUnit * clone();
+
+        virtual bool add(UnitComponent *component);
+        virtual bool remove(UnitComponent *component);
 };
 
 

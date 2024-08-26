@@ -10,9 +10,14 @@ class WoodlandFactory : public LegionFactory{
         void setInfantryClone();
         void setCavalryClone();
         void setArtilleryClone();
+
         Artillery * deployArtillery();
         Infantry * deployInfantry();
         Cavalry * deployCavalry();
+
+        Infantry * createInfantry();
+        Cavalry * createCavalry();
+        Artillery * createArtillery();
 };
 
 

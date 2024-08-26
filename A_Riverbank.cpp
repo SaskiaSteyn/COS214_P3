@@ -16,3 +16,11 @@ void A_Riverbank::attack() {
 LegionUnit *A_Riverbank::clone() {
     return new A_Riverbank(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
 }
+
+bool A_Riverbank::add(UnitComponent *component) {
+    return false;
+}
+
+bool A_Riverbank::remove(UnitComponent *component) {
+    return false;
+}

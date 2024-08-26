@@ -15,3 +15,11 @@ void I_OpenField::attack() {
 LegionUnit *I_OpenField::clone() {
     return new I_OpenField(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
 }
+
+bool I_OpenField::add(UnitComponent *component) {
+    return false;
+}
+
+bool I_OpenField::remove(UnitComponent *component) {
+    return false;
+}

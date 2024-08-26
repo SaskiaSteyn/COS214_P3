@@ -4,7 +4,7 @@
 #include "LegionUnit.h"
 #include "UnitComponent.h"
 
-class Artillery : public LegionUnit{
+class Artillery : public LegionUnit, public UnitComponent{
 public:
     Artillery(int health, int damage, int defence, int amount, int ms);
     virtual void move() = 0;

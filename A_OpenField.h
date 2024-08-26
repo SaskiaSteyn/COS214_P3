@@ -9,6 +9,10 @@ class A_OpenField : public Artillery{
         void move();
         void attack();
         LegionUnit * clone();
+
+        virtual bool add(UnitComponent *component);
+        virtual bool remove(UnitComponent *component);
+
 };
 
 

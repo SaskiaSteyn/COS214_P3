@@ -16,14 +16,27 @@ Artillery *OpenFieldFactory::createArtillery() {
     return nullptr;
 }
 
-void OpenFieldFactory::deployArtillery() {
+
+void OpenFieldFactory::setInfantryClone() {
 
 }
 
-void OpenFieldFactory::deployInfantry() {
+void OpenFieldFactory::setCavalryClone() {
 
 }
 
-void OpenFieldFactory::deployCavalry() {
+void OpenFieldFactory::setArtilleryClone() {
 
+}
+
+Artillery *OpenFieldFactory::deployArtillery() {
+    return nullptr;
+}
+
+Infantry *OpenFieldFactory::deployInfantry() {
+    return nullptr;
+}
+
+Cavalry *OpenFieldFactory::deployCavalry() {
+    return nullptr;
 }
