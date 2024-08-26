@@ -5,38 +5,26 @@ RiverbankFactory::RiverbankFactory(Infantry *infantryClone, Cavalry *cavalryClon
 }
 
 Infantry *RiverbankFactory::createInfantry() {
-    return nullptr;
+    return this->infantryClone->clone();
 }
 
 Cavalry *RiverbankFactory::createCavalry() {
-    return nullptr;
+    return this->cavalryClone->clone();
 }
 
 Artillery *RiverbankFactory::createArtillery() {
-    return nullptr;
+    return this->artilleryClone->clone();
 }
 
 
-void RiverbankFactory::setInfantryClone() {
-
+void RiverbankFactory::setInfantryClone(Infantry * newClone) {
+    this->infantryClone = newClone;
 }
 
-void RiverbankFactory::setCavalryClone() {
-
+void RiverbankFactory::setCavalryClone(Cavalry * newClone) {
+    this->cavalryClone = newClone;
 }
 
-void RiverbankFactory::setArtilleryClone() {
-
-}
-
-Artillery *RiverbankFactory::deployArtillery() {
-    return nullptr;
-}
-
-Infantry *RiverbankFactory::deployInfantry() {
-    return nullptr;
-}
-
-Cavalry *RiverbankFactory::deployCavalry() {
-    return nullptr;
+void RiverbankFactory::setArtilleryClone(Artillery * newClone) {
+    this->artilleryClone = newClone;
 }

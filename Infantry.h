@@ -11,10 +11,10 @@ using namespace std;
 
 class Infantry : public LegionUnit, public UnitComponent{
     public:
-        Infantry(int health, int damage, int defence, int amount, int ms);
+        Infantry(int health, int damage, int defence, int amount, int ms, string unitName);
         virtual void move() = 0;
         virtual void attack() = 0;
-        virtual LegionUnit * clone() = 0;
+        virtual Infantry * clone() = 0;
         void reportingForDuty();
 
         const string type = "Infantry";

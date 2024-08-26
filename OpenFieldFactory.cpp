@@ -5,38 +5,26 @@ OpenFieldFactory::OpenFieldFactory(Infantry * infantryClone, Cavalry * cavalryCl
 }
 
 Infantry *OpenFieldFactory::createInfantry() {
-    return nullptr;
+    return this->infantryClone->clone();
 }
 
 Cavalry *OpenFieldFactory::createCavalry() {
-    return nullptr;
+    return this->cavalryClone->clone();
 }
 
 Artillery *OpenFieldFactory::createArtillery() {
-    return nullptr;
+    return this->artilleryClone->clone();
 }
 
 
-void OpenFieldFactory::setInfantryClone() {
-
+void OpenFieldFactory::setInfantryClone(Infantry * newClone) {
+    this->infantryClone = newClone;
 }
 
-void OpenFieldFactory::setCavalryClone() {
-
+void OpenFieldFactory::setCavalryClone(Cavalry * newClone) {
+    this->cavalryClone = newClone;
 }
 
-void OpenFieldFactory::setArtilleryClone() {
-
-}
-
-Artillery *OpenFieldFactory::deployArtillery() {
-    return nullptr;
-}
-
-Infantry *OpenFieldFactory::deployInfantry() {
-    return nullptr;
-}
-
-Cavalry *OpenFieldFactory::deployCavalry() {
-    return nullptr;
+void OpenFieldFactory::setArtilleryClone(Artillery * newClone) {
+    this->artilleryClone = newClone;
 }

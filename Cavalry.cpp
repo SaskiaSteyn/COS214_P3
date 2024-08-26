@@ -1,6 +1,7 @@
 #include "Cavalry.h"
 
-Cavalry::Cavalry(int health, int damage, int defence, int amount, int ms): LegionUnit(health, damage, defence, amount, ms) {
+Cavalry::Cavalry(int health, int damage, int defence, int amount, int ms, string unitName): LegionUnit(health, damage, defence, amount,
+                                                                                      ms, unitName) {
     // Inherited
 }
 

@@ -1,6 +1,6 @@
 #include "I_Riverbank.h"
 
-I_Riverbank::I_Riverbank(int health, int damage, int defence, int amount, int ms) : Infantry(health, damage, defence, amount, ms) {
+I_Riverbank::I_Riverbank(int health, int damage, int defence, int amount, int ms, string unitName) : Infantry(health, damage, defence, amount, ms, unitName) {
 
 }
 
@@ -12,6 +12,6 @@ void I_Riverbank::attack() {
     cout << this->legionName << " is attacking on a riverbank." << endl;
 }
 
-LegionUnit *I_Riverbank::clone() {
-    return new I_Riverbank(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
+Infantry *I_Riverbank::clone() {
+    return new I_Riverbank(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS(), this->getLegionName());
 }

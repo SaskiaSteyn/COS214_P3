@@ -1,11 +1,12 @@
 #include "LegionUnit.h"
 
-LegionUnit::LegionUnit(int health, int damage, int defence, int amount, int ms) {
+LegionUnit::LegionUnit(int health, int damage, int defence, int amount, int ms, string unitName) {
     this->health = health;
     this->damage = damage;
     this->defence = defence;
     this->amount = amount;
     this->ms = ms;
+    this->legionName = unitName;
 }
 
 BattleStrategy *LegionUnit::getStrategy() {
@@ -34,4 +35,12 @@ int LegionUnit::getAmount() {
 
 int LegionUnit::getMS() {
     return this->ms;
+}
+
+void LegionUnit::setLegionName(string name) {
+    this->legionName = name;
+}
+
+string LegionUnit::getLegionName() {
+    return this->legionName;
 }

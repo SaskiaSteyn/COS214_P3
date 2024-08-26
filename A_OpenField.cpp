@@ -1,7 +1,12 @@
 #include "A_OpenField.h"
 
-A_OpenField::A_OpenField(int health, int damage, int defence, int amount, int ms) : Artillery(health, damage, defence, amount, ms) {
-    // Inherited
+A_OpenField::A_OpenField(int health, int damage, int defence, int amount, int ms, string unitName) : Artillery(health,
+                                                                                                               damage,
+                                                                                                               defence,
+                                                                                                               amount,
+                                                                                                               ms,
+                                                                                                               unitName) {
+
 }
 
 void A_OpenField::move() {
@@ -13,6 +18,8 @@ void A_OpenField::attack() {
     cout << this->legionName << " is attacking in an open field" << endl;
 }
 
-LegionUnit *A_OpenField::clone() {
-    return new A_OpenField(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS());
+Artillery *A_OpenField::clone() {
+    return new A_OpenField(this->getHealth(), this->getDamage(), this->getDefence(), this->getAmount(), this->getMS(), this->getLegionName());
 }
+
+

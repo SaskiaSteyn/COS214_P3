@@ -1,6 +1,7 @@
 #include "Artillery.h"
 
-Artillery::Artillery(int health, int damage, int defence, int amount, int ms): LegionUnit(health, damage, defence, amount, ms) {
+Artillery::Artillery(int health, int damage, int defence, int amount, int ms, string unitName) : LegionUnit(health, damage, defence,
+                                                                                                            amount, ms, unitName) {
     // Inherited
 }
 

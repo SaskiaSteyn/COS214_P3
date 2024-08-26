@@ -7,7 +7,7 @@
 
 
 class LegionFactory {
-    private:
+    protected:
         Infantry * infantryClone;
         Cavalry * cavalryClone;
         Artillery * artilleryClone;
