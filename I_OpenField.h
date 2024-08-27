@@ -5,7 +5,7 @@
 
 class I_OpenField : public Infantry{
     public:
-        I_OpenField(int health, int damage, int defence, int amount, int ms, string unitName);
+        I_OpenField(int health, int damage, int defence, int amount, int ms, string name);
         virtual void move();
         virtual void attack();
         virtual Infantry * clone();

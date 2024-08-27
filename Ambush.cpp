@@ -1,7 +1,7 @@
 #include "Ambush.h"
 
-void Ambush::engage() {
-    cout << "Executing an ambush" << endl;
+string Ambush::engage() {
+    return "Executing an ambush";
 }
 
 string Ambush::getType() {

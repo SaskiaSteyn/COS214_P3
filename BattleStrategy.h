@@ -2,13 +2,18 @@
 #define PRAC_3_BATTLESTRATEGY_H
 
 #include <iostream>
+#include <map>
 
 using namespace std;
 
 class BattleStrategy {
+    private:
+        int victories;
     public:
         virtual string getType() = 0;
-        virtual void engage() = 0;
+        virtual string engage() = 0;
+        int getVictories();
+        void winBattle();
 };
 
 
