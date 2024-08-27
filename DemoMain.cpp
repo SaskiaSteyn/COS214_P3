@@ -79,14 +79,14 @@ int main() {
     OpenFieldFactory openFieldFactory(openFieldInfantry, openFieldCavalry, openFieldArtillery);
 
     // Game Objects
-    Legion blueLegion();
-    Legion redLegion();
+    Legion blueLegion;
+    Legion redLegion;
 
-    TacticalCommand blueCommand();
-    TacticalCommand redCommand();
+    TacticalCommand blueCommand;
+    TacticalCommand redCommand;
 
-    WarArchives blueArchive();
-    WarArchives redArchive();
+    WarArchives blueArchive;
+    WarArchives redArchive;
 
     srand(static_cast<unsigned int>(time(nullptr)));
     int coin = rand() % 2;
@@ -125,14 +125,17 @@ int main() {
     cout << "|                                        |" << endl;
     cout << "------------------------------------------" << endl;
 
-    string blueLocation;
-    string redLocation;
+    int blueLocation = 0;
+    int redLocation = 0;
 
     cout << "Defending Team chooses a location first" << endl;
     if (coin == 0) {
         cout << "Blue Team is on defence" << endl;
 
-        while (blueLocation != "1" || blueLocation != "2" || blueLocation != "3") {
+        cout << "Choose a location to set up camp. Type only the number: (1. Woodlands | 2. Riverbank | 3. Open Field)" << endl << "Choice: ";
+        cin >> blueLocation;
+
+        while (blueLocation != 1 && blueLocation != 2 && blueLocation != 3) {
             cout << "Choose a location to set up camp. Type only the number: (1. Woodlands | 2. Riverbank | 3. Open Field)" << endl << "Choice: ";
             cin >> blueLocation;
         }
@@ -141,7 +144,7 @@ int main() {
     else {
         cout << "Red Team is on defence" << endl;
 
-        while (redLocation != "1" || redLocation != "2" || redLocation != "3") {
+        while (redLocation != 1 && redLocation != 2 && redLocation != 3) {
             cout << "Choose a location to set up camp. Type only the number: (1. Woodlands | 2. Riverbank | 3. Open Field)" << endl << "Choice: ";
             cin >> redLocation;
         }
@@ -150,7 +153,7 @@ int main() {
     if (coin == 0) {
         cout << "Red Team is on offense" << endl;
 
-        while (redLocation != "1" || redLocation != "2" || redLocation != "3") {
+        while (redLocation != 1 && redLocation != 2 && redLocation != 3) {
             cout << "Choose a location to set up camp. Type only the number: (1. Woodlands | 2. Riverbank | 3. Open Field)" << endl << "Choice: ";
             cin >> redLocation;
         }
@@ -159,7 +162,7 @@ int main() {
     else {
         cout << "Blue Team is on offense" << endl;
 
-        while (blueLocation != "1" || blueLocation != "2" || blueLocation != "3") {
+        while (blueLocation != 1 && blueLocation != 2 && blueLocation != 3) {
             cout << "Choose a location to set up camp. Type only the number: (1. Woodlands | 2. Riverbank | 3. Open Field)" << endl << "Choice: ";
             cin >> blueLocation;
         }
@@ -171,7 +174,7 @@ int main() {
     // Blue Army
     cout << "\n \n ==================== Blue Army ==================== \n \n";
     string strategy;
-    while (strategy != "flank" || strategy != "fortify" || strategy != "ambush") {
+    while (strategy != "flank" && strategy != "fortify" && strategy != "ambush") {
         cout << "Choose your war strategy: (Flank | Fortify | Ambush)" << endl << "Choice: ";
         cin >> strategy;
 
@@ -192,13 +195,13 @@ int main() {
     else {
         blueStrategy = new Ambush();
     }
-    blueCommand().setStrategy(blueStrategy);
+    blueCommand.setStrategy(blueStrategy);
 
 
     // Red Army
     cout << "\n \n ==================== Red Army ==================== \n \n";
     strategy = "";
-    while (strategy != "flank" || strategy != "fortify" || strategy != "ambush") {
+    while (strategy != "flank" && strategy != "fortify" && strategy != "ambush") {
         cout << "Choose your war strategy: (Flank | Fortify | Ambush)" << endl << "Choice: ";
         cin >> strategy;
 
@@ -219,7 +222,7 @@ int main() {
     else {
         redStrategy = new Ambush();
     }
-    redCommand().setStrategy(redStrategy);
+    redCommand.setStrategy(redStrategy);
 
 
 
@@ -261,7 +264,7 @@ int main() {
 
     // Mobilising Blue Army
     //Woodlands
-    if (blueLocation == "1") {
+    if (blueLocation == 1) {
         if (coin == 0) {
             woodlands1 = blueString;
         }
@@ -272,32 +275,32 @@ int main() {
         if (blueStrategy->getType() == "Ambush") {
             // 10 Infantry and 40 Cavalry
             woodlandFactory.setInfantryClone(new I_Woodland(200, 50, 5, 10, 1, "WoodlandInfantry"));
-            blueLegion().add(woodlandFactory.createInfantry());
+            blueLegion.add(woodlandFactory.createInfantry());
 
             woodlandFactory.setCavalryClone(new C_Woodland(250, 84, 10, 40, 2, "WoodlandCavalry"));
-            blueLegion().add(woodlandFactory.createCavalry());
+            blueLegion.add(woodlandFactory.createCavalry());
         }
 
         if (blueStrategy->getType() == "Fortification") {
             // 30 Artillery  20 Infantry
             woodlandFactory.setInfantryClone(new I_Woodland(200, 50, 5, 20, 1, "WoodlandInfantry"));
-            blueLegion().add(woodlandFactory.createInfantry());
+            blueLegion.add(woodlandFactory.createInfantry());
 
             woodlandFactory.setArtilleryClone(new A_Woodland(100, 150, 0, 30, 0, "WoodlandArtillery"));
-            blueLegion().add(woodlandFactory.createArtillery());
+            blueLegion.add(woodlandFactory.createArtillery());
         }
 
         if (blueStrategy->getType() == "Flanking") {
             // 30 Infantry  20 Cavalry
             woodlandFactory.setInfantryClone(new I_Woodland(200, 50, 5, 30, 1, "WoodlandInfantry"));
-            blueLegion().add(woodlandFactory.createInfantry());
+            blueLegion.add(woodlandFactory.createInfantry());
 
             woodlandFactory.setCavalryClone(new C_Woodland(250, 84, 10, 20, 2, "WoodlandCavalry"));
-            blueLegion().add(woodlandFactory.createCavalry());
+            blueLegion.add(woodlandFactory.createCavalry());
         }
     }
-    // RiverLands
-    else if (blueLocation == "2") {
+        // RiverLands
+    else if (blueLocation == 2) {
         if (coin == 0) {
             riverbank1 = blueString;
         }
@@ -308,31 +311,31 @@ int main() {
         if (blueStrategy->getType() == "Ambush") {
             // 10 Infantry and 40 Cavalry
             riverbankFactory.setInfantryClone(new I_Riverbank(200, 50, 5, 10, 1, "RiverbankInfantry"));
-            blueLegion().add(riverbankFactory.createInfantry());
+            blueLegion.add(riverbankFactory.createInfantry());
 
             riverbankFactory.setCavalryClone(new C_Riverbank(250, 84, 10, 40, 2, "RiverbankCavalry"));
-            blueLegion().add(riverbankFactory.createCavalry());
+            blueLegion.add(riverbankFactory.createCavalry());
         }
 
         if (blueStrategy->getType() == "Fortification") {
             // 30 Artillery  20 Infantry
             riverbankFactory.setInfantryClone(new I_Riverbank(200, 50, 5, 20, 1, "RiverbankInfantry"));
-            blueLegion().add(riverbankFactory.createInfantry());
+            blueLegion.add(riverbankFactory.createInfantry());
 
             riverbankFactory.setArtilleryClone(new A_Riverbank(100, 150, 0, 30, 0, "RiverbankArtillery"));
-            blueLegion().add(riverbankFactory.createArtillery());
+            blueLegion.add(riverbankFactory.createArtillery());
         }
 
         if (blueStrategy->getType() == "Flanking") {
             // 30 Infantry  20 Cavalry
             riverbankFactory.setInfantryClone(new I_Riverbank(200, 50, 5, 30, 1, "RiverbankInfantry"));
-            blueLegion().add(riverbankFactory.createInfantry());
+            blueLegion.add(riverbankFactory.createInfantry());
 
             riverbankFactory.setCavalryClone(new C_Riverbank(250, 84, 10, 20, 2, "RiverbankCavalry"));
-            blueLegion().add(riverbankFactory.createCavalry());
+            blueLegion.add(riverbankFactory.createCavalry());
         }
     }
-    // OpenFields
+        // OpenFields
     else {
         if (coin == 0) {
             openFields1 = blueString;
@@ -344,28 +347,28 @@ int main() {
         if (blueStrategy->getType() == "Ambush") {
             // 10 Infantry and 40 Cavalry
             openFieldFactory.setInfantryClone(new I_OpenField(200, 50, 5, 10, 1, "OpenFieldInfantry"));
-            blueLegion().add(openFieldFactory.createInfantry());
+            blueLegion.add(openFieldFactory.createInfantry());
 
             openFieldFactory.setCavalryClone(new C_OpenField(250, 84, 10, 40, 2, "OpenFieldCavalry"));
-            blueLegion().add(openFieldFactory.createCavalry());
+            blueLegion.add(openFieldFactory.createCavalry());
         }
 
         if (blueStrategy->getType() == "Fortification") {
             // 30 Artillery  20 Infantry
             openFieldFactory.setInfantryClone(new I_OpenField(200, 50, 5, 20, 1, "OpenFieldkInfantry"));
-            blueLegion().add(openFieldFactory.createInfantry());
+            blueLegion.add(openFieldFactory.createInfantry());
 
             openFieldFactory.setArtilleryClone(new A_OpenField(100, 150, 0, 30, 0, "OpenFieldArtillery"));
-            blueLegion().add(openFieldFactory.createArtillery());
+            blueLegion.add(openFieldFactory.createArtillery());
         }
 
         if (blueStrategy->getType() == "Flanking") {
             // 30 Infantry  20 Cavalry
             openFieldFactory.setInfantryClone(new I_OpenField(200, 50, 5, 30, 1, "OpenFieldInfantry"));
-            blueLegion().add(openFieldFactory.createInfantry());
+            blueLegion.add(openFieldFactory.createInfantry());
 
             openFieldFactory.setCavalryClone(new C_OpenField(250, 84, 10, 20, 2, "OpenFieldCavalry"));
-            blueLegion().add(openFieldFactory.createCavalry());
+            blueLegion.add(openFieldFactory.createCavalry());
         }
     }
 
@@ -375,7 +378,7 @@ int main() {
 
     // Mobilising Red Army
     //Woodlands
-    if (redLocation == "1") {
+    if (redLocation == 1) {
         if (coin == 1) {
             woodlands1 = redString;
         }
@@ -386,32 +389,32 @@ int main() {
         if (redStrategy->getType() == "Ambush") {
             // 10 Infantry and 40 Cavalry
             woodlandFactory.setInfantryClone(new I_Woodland(200, 50, 5, 10, 1, "WoodlandInfantry"));
-            redLegion().add(woodlandFactory.createInfantry());
+            redLegion.add(woodlandFactory.createInfantry());
 
             woodlandFactory.setCavalryClone(new C_Woodland(250, 84, 10, 40, 2, "WoodlandCavalry"));
-            redLegion().add(woodlandFactory.createCavalry());
+            redLegion.add(woodlandFactory.createCavalry());
         }
 
         if (redStrategy->getType() == "Fortification") {
             // 30 Artillery  20 Infantry
             woodlandFactory.setInfantryClone(new I_Woodland(200, 50, 5, 20, 1, "WoodlandInfantry"));
-            redLegion().add(woodlandFactory.createInfantry());
+            redLegion.add(woodlandFactory.createInfantry());
 
             woodlandFactory.setArtilleryClone(new A_Woodland(100, 150, 0, 30, 0, "WoodlandArtillery"));
-            redLegion().add(woodlandFactory.createArtillery());
+            redLegion.add(woodlandFactory.createArtillery());
         }
 
         if (redStrategy->getType() == "Flanking") {
             // 30 Infantry  20 Cavalry
             woodlandFactory.setInfantryClone(new I_Woodland(200, 50, 5, 30, 1, "WoodlandInfantry"));
-            redLegion().add(woodlandFactory.createInfantry());
+            redLegion.add(woodlandFactory.createInfantry());
 
             woodlandFactory.setCavalryClone(new C_Woodland(250, 84, 10, 20, 2, "WoodlandCavalry"));
-            redLegion().add(woodlandFactory.createCavalry());
+            redLegion.add(woodlandFactory.createCavalry());
         }
     }
         // RiverLands
-    else if (redLocation == "2") {
+    else if (redLocation == 2) {
         if (coin == 1) {
             riverbank1 = redString;
         }
@@ -422,28 +425,28 @@ int main() {
         if (redStrategy->getType() == "Ambush") {
             // 10 Infantry and 40 Cavalry
             riverbankFactory.setInfantryClone(new I_Riverbank(200, 50, 5, 10, 1, "RiverbankInfantry"));
-            redLegion().add(riverbankFactory.createInfantry());
+            redLegion.add(riverbankFactory.createInfantry());
 
             riverbankFactory.setCavalryClone(new C_Riverbank(250, 84, 10, 40, 2, "RiverbankCavalry"));
-            redLegion().add(riverbankFactory.createCavalry());
+            redLegion.add(riverbankFactory.createCavalry());
         }
 
         if (redStrategy->getType() == "Fortification") {
             // 30 Artillery  20 Infantry
             riverbankFactory.setInfantryClone(new I_Riverbank(200, 50, 5, 20, 1, "RiverbankInfantry"));
-            redLegion().add(riverbankFactory.createInfantry());
+            redLegion.add(riverbankFactory.createInfantry());
 
             riverbankFactory.setArtilleryClone(new A_Riverbank(100, 150, 0, 30, 0, "RiverbankArtillery"));
-            redLegion().add(riverbankFactory.createArtillery());
+            redLegion.add(riverbankFactory.createArtillery());
         }
 
         if (redStrategy->getType() == "Flanking") {
             // 30 Infantry  20 Cavalry
             riverbankFactory.setInfantryClone(new I_Riverbank(200, 50, 5, 30, 1, "RiverbankInfantry"));
-            redLegion().add(riverbankFactory.createInfantry());
+            redLegion.add(riverbankFactory.createInfantry());
 
             riverbankFactory.setCavalryClone(new C_Riverbank(250, 84, 10, 20, 2, "RiverbankCavalry"));
-            redLegion().add(riverbankFactory.createCavalry());
+            redLegion.add(riverbankFactory.createCavalry());
         }
     }
         // OpenFields
@@ -458,28 +461,28 @@ int main() {
         if (redStrategy->getType() == "Ambush") {
             // 10 Infantry and 40 Cavalry
             openFieldFactory.setInfantryClone(new I_OpenField(200, 50, 5, 10, 1, "OpenFieldInfantry"));
-            redLegion().add(openFieldFactory.createInfantry());
+            redLegion.add(openFieldFactory.createInfantry());
 
             openFieldFactory.setCavalryClone(new C_OpenField(250, 84, 10, 40, 2, "OpenFieldCavalry"));
-            redLegion().add(openFieldFactory.createCavalry());
+            redLegion.add(openFieldFactory.createCavalry());
         }
 
         if (redStrategy->getType() == "Fortification") {
             // 30 Artillery  20 Infantry
             openFieldFactory.setInfantryClone(new I_OpenField(200, 50, 5, 20, 1, "OpenFieldkInfantry"));
-            redLegion().add(openFieldFactory.createInfantry());
+            redLegion.add(openFieldFactory.createInfantry());
 
             openFieldFactory.setArtilleryClone(new A_OpenField(100, 150, 0, 30, 0, "OpenFieldArtillery"));
-            redLegion().add(openFieldFactory.createArtillery());
+            redLegion.add(openFieldFactory.createArtillery());
         }
 
         if (redStrategy->getType() == "Flanking") {
             // 30 Infantry  20 Cavalry
             openFieldFactory.setInfantryClone(new I_OpenField(200, 50, 5, 30, 1, "OpenFieldInfantry"));
-            redLegion().add(openFieldFactory.createInfantry());
+            redLegion.add(openFieldFactory.createInfantry());
 
             openFieldFactory.setCavalryClone(new C_OpenField(250, 84, 10, 20, 2, "OpenFieldCavalry"));
-            redLegion().add(openFieldFactory.createCavalry());
+            redLegion.add(openFieldFactory.createCavalry());
         }
     }
 
