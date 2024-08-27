@@ -1,7 +1,7 @@
 #include "Flanking.h"
 
-void Flanking::engage() {
-    cout << "Executing a flank" << endl;
+string Flanking::engage() {
+    return "Executing a flank";
 }
 
 string Flanking::getType() {

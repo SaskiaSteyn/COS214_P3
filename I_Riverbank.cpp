@@ -1,6 +1,6 @@
 #include "I_Riverbank.h"
 
-I_Riverbank::I_Riverbank(int health, int damage, int defence, int amount, int ms, string unitName) : Infantry(health, damage, defence, amount, ms, unitName) {
+I_Riverbank::I_Riverbank(int health, int damage, int defence, int amount, int ms, string name) : Infantry(health, damage, defence, amount, ms, name) {
 
 }
 

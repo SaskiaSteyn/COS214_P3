@@ -16,6 +16,7 @@
 #include "Flanking.h"
 #include "Fortification.h"
 #include "Ambush.h"
+#include "Legion.h"
 
 using namespace std;
 
@@ -147,6 +148,8 @@ void testingBattle(){
     riverBankArtillery->reportingForDuty();
     riverBankCavalry->reportingForDuty();
 
+    cout << flankingStrat->engage();
+
     cout << "\n \n ==================== Testing Ambush method ==================== \n \n";
     BattleStrategy * ambushStrat = new Ambush();
     riverBankInfantry->setStrategy(ambushStrat);
@@ -157,6 +160,7 @@ void testingBattle(){
     riverBankArtillery->reportingForDuty();
     riverBankCavalry->reportingForDuty();
 
+    cout << ambushStrat->engage();
 
     cout << "\n \n ==================== Testing Fortification method ==================== \n \n";
     BattleStrategy * fortStrat = new Fortification();
@@ -167,10 +171,97 @@ void testingBattle(){
     riverBankInfantry->reportingForDuty();
     riverBankArtillery->reportingForDuty();
     riverBankCavalry->reportingForDuty();
+
+    cout << fortStrat->engage();
 }
 
-int main() {
-    testFactories();
-    testingBattle();
-    return 0;
-};
+void testingAbstractProducts(){
+
+    cout << "\n \n ==================== Adding sub legion: Infantry ==================== \n \n ";
+
+    Infantry * testingI = new I_OpenField(100, 100, 100, 100, 100, "Testing Infantry");
+    Infantry * component = new I_OpenField(50, 50, 50, 50, 50, "Infantry Sub legion");
+
+    testingI->add(component);
+    testingI->remove(component);
+
+    cout << "\n \n ==================== Adding sub legion: Cavalry ==================== \n \n ";
+
+    Cavalry * testingC = new C_OpenField(100, 100, 100, 100, 100, "Testing Cavalry");
+    Cavalry * component2 = new C_OpenField(50, 50, 50, 50, 50, "Cavalry Sub legion");
+
+    testingC->add(component2);
+    testingC->remove(component2);
+
+    cout << "\n \n ==================== Adding sub legion: Artillery ==================== \n \n ";
+
+    Artillery * testingA = new A_OpenField(100, 100, 100, 100, 100, "Testing Artillery");
+    Artillery * component3 = new A_OpenField(50, 50, 50, 50, 50, "Artillery Sub legion");
+
+    testingA->add(component3);
+    testingA->remove(component3);
+}
+
+void testingLegions(){
+    cout << "\n \n ==================== Testing Infantry Legions ==================== \n \n ";
+
+    Legion * legion = new Legion();
+
+    legion->setUnitName("1st Battalion");
+
+    Infantry * subLegionInfantry = new I_OpenField(100, 100, 100, 100, 100, "Infantry 1st Regiment");
+    Cavalry * subLegionCavalry = new C_OpenField(100, 100, 100, 100, 100, "Cavalry 1st Regiment");
+    Artillery * subLegionArtillery = new A_OpenField(100, 100, 100, 100, 100, "Artillery 1st Regiment");
+    legion->add(subLegionInfantry);
+    legion->add(subLegionCavalry);
+    legion->add(subLegionArtillery);
+
+    cout << endl;
+
+    legion->move();
+
+    cout << endl;
+
+    legion->attack();
+
+    cout << "Adding sub-legions";
+
+    Legion * subLegion = new Legion();
+
+    subLegion->setUnitName("1st Brigade");
+
+    Infantry * subLegionInfantry2 = new I_OpenField(100, 100, 100, 100, 100, "Infantry 2nd Regiment");
+    Cavalry * subLegionCavalry2 = new C_OpenField(100, 100, 100, 100, 100, "Cavalry 2nd Regiment");
+    Artillery * subLegionArtillery2 = new A_OpenField(100, 100, 100, 100, 100, "Artillery 2nd Regiment");
+    Infantry * subLegionInfantry3 = new I_OpenField(100, 100, 100, 100, 100, "Infantry 3st Regiment");
+    Cavalry * subLegionCavalry3 = new C_OpenField(100, 100, 100, 100, 100, "Cavalry 3st Regiment");
+    Artillery * subLegionArtillery3 = new A_OpenField(100, 100, 100, 100, 100, "Artillery 3st Regiment");
+    subLegion->add(subLegionInfantry2);
+    subLegion->add(subLegionCavalry2);
+    subLegion->add(subLegionArtillery2);
+    subLegion->add(subLegionInfantry3);
+    subLegion->add(subLegionCavalry3);
+    subLegion->add(subLegionArtillery3);
+
+    legion->add(subLegion);
+
+    cout << "\n \n ==================== Testing Sub-Legions ==================== \n \n ";
+
+    cout << endl;
+
+    legion->move();
+
+    cout << endl;
+
+    legion->attack();
+
+}
+
+
+//int main() {
+//    testFactories();
+//    testingBattle();
+//    testingAbstractProducts();
+//    testingLegions();
+//    return 0;
+//};

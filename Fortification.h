@@ -5,7 +5,7 @@
 
 class Fortification : public BattleStrategy{
     public:
-        void engage();
+        string engage();
         string getType();
         const string type = "Fortification";
 };
