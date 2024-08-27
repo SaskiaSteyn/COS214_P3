@@ -26,16 +26,6 @@ bool Artillery::add(UnitComponent *component) {
 }
 
 bool Artillery::remove(UnitComponent *component) {
-//    auto it = find(this->unitComponent.begin(), this->unitComponent.end(), component);
-//
-//    if (it != this->unitComponent.end()) {
-//        this->unitComponent.erase(it);
-//        return true;
-//    }
-//    else{
-//        return false;
-//    }
-
     for (int i = 0; i < this->unitComponent.size(); i++) {
         if (this->unitComponent[i] == component) {
             this->unitComponent.erase(this->unitComponent.begin() + i);

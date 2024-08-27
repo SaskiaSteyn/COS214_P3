@@ -1,6 +1,7 @@
 #include "Infantry.h"
 
-Infantry::Infantry(int health, int damage, int defence, int amount, int ms, string unitName): LegionUnit(health, damage, defence, amount, ms, unitName) {
+Infantry::Infantry(int health, int damage, int defence, int amount, int ms, string unitName): LegionUnit(health, damage, defence, amount,
+                                                                                        ms, unitName) {
     // Inherited
 }
 
@@ -25,16 +26,6 @@ bool Infantry::add(UnitComponent *component) {
 }
 
 bool Infantry::remove(UnitComponent *component) {
-//    auto it = find(this->unitComponent.begin(), this->unitComponent.end(), component);
-//
-//    if (it != this->unitComponent.end()) {
-//        this->unitComponent.erase(it);
-//        return true;
-//    }
-//    else{
-//        return false;
-//    }
-
     for (int i = 0; i < this->unitComponent.size(); i++) {
         if (this->unitComponent[i] == component) {
             this->unitComponent.erase(this->unitComponent.begin() + i);
