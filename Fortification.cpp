@@ -1,7 +1,7 @@
 #include "Fortification.h"
 
-void Fortification::engage() {
-    cout << "Executing a fortification" << endl;
+string Fortification::engage() {
+    return "Executing a fortification";
 }
 
 string Fortification::getType() {

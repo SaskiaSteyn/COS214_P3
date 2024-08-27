@@ -18,15 +18,24 @@ bool Legion::add(UnitComponent *component) {
 }
 
 bool Legion::remove(UnitComponent *component) {
-    auto it = find(this->unitComponent.begin(), this->unitComponent.end(), component);
+//    auto it = find(this->unitComponent.begin(), this->unitComponent.end(), component);
+//
+//    if (it != this->unitComponent.end()) {
+//        this->unitComponent.erase(it);
+//        return true;
+//    }
+//    else{
+//        return false;
+//    }
 
-    if (it != this->unitComponent.end()) {
-        this->unitComponent.erase(it);
-        return true;
+    for (int i = 0; i < this->unitComponent.size(); i++) {
+        if (this->unitComponent[i] == component) {
+            this->unitComponent.erase(this->unitComponent.begin() + i);
+            return true;
+        }
     }
-    else{
-        return false;
-    }
+
+    return false;
 }
 
 

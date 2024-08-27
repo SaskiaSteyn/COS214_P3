@@ -169,8 +169,8 @@ void testingBattle(){
     riverBankCavalry->reportingForDuty();
 }
 
-int main() {
-    testFactories();
-    testingBattle();
-    return 0;
-};
+//int main() {
+//    testFactories();
+//    testingBattle();
+//    return 0;
+//};

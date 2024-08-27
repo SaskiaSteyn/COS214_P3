@@ -1,6 +1,6 @@
 #include "I_OpenField.h"
 
-I_OpenField::I_OpenField(int health, int damage, int defence, int amount, int ms, string unitName) : Infantry(health, damage, defence, amount, ms, unitName) {
+I_OpenField::I_OpenField(int health, int damage, int defence, int amount, int ms, string name) : Infantry(health, damage, defence, amount, ms, name) {
     // Inherited
 }
 
