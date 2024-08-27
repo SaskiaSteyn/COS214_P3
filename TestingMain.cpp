@@ -16,6 +16,8 @@
 #include "Flanking.h"
 #include "Fortification.h"
 #include "Ambush.h"
+#include "TacticalCommand.h"
+#include "BattleStrategy.h"
 
 using namespace std;
 
@@ -169,8 +171,30 @@ void testingBattle(){
     riverBankCavalry->reportingForDuty();
 }
 
-//int main() {
-//    testFactories();
-//    testingBattle();
-//    return 0;
-//};
+void testStrategies() {
+    cout << "\n \n ==================== Testing Strategy ==================== \n \n";
+
+    TacticalCommand command;
+
+    BattleStrategy *ambush = new Ambush();
+    BattleStrategy *flank = new Flanking();
+    BattleStrategy *fort = new Fortification();
+
+    command.setStrategy(ambush);
+    command.executeStrategy();
+
+    command.setStrategy(flank);
+    command.executeStrategy();
+
+    command.setStrategy(fort);
+    command.executeStrategy();
+
+    command.chooseBestStrategy();
+}
+
+int main() {
+    testFactories();
+    testingBattle();
+    testStrategies();
+    return 0;
+};
