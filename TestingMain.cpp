@@ -147,6 +147,8 @@ void testingBattle(){
     riverBankArtillery->reportingForDuty();
     riverBankCavalry->reportingForDuty();
 
+    flankingStrat->engage();
+
     cout << "\n \n ==================== Testing Ambush method ==================== \n \n";
     BattleStrategy * ambushStrat = new Ambush();
     riverBankInfantry->setStrategy(ambushStrat);
@@ -157,6 +159,7 @@ void testingBattle(){
     riverBankArtillery->reportingForDuty();
     riverBankCavalry->reportingForDuty();
 
+    ambushStrat->engage();
 
     cout << "\n \n ==================== Testing Fortification method ==================== \n \n";
     BattleStrategy * fortStrat = new Fortification();
@@ -167,10 +170,18 @@ void testingBattle(){
     riverBankInfantry->reportingForDuty();
     riverBankArtillery->reportingForDuty();
     riverBankCavalry->reportingForDuty();
+
+    fortStrat->engage();
 }
+
+void testingAbstractProducts(){
+
+}
+
 
 int main() {
     testFactories();
     testingBattle();
+    testingAbstractProducts();
     return 0;
 };
