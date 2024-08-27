@@ -5,9 +5,9 @@ void TacticalCommand::setStrategy(BattleStrategy *s) {
 }
 
 void TacticalCommand::executeStrategy() {
-    this->strategy->engage();
+    cout << this->strategy->engage() << endl;
 }
 
 void TacticalCommand::chooseBestStrategy() {
-    this->strategy->engage();
+    cout << this->strategy->engage() << endl;
 }
